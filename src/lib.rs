@@ -7,7 +7,6 @@ use axum::Router;
 use tower_http::cors::CorsLayer;
 use tower_http::trace::TraceLayer;
 
-/// Builds and returns the complete application router with all routes and middleware.
 pub fn app() -> Router {
     Router::new()
         .merge(routes::home::routes())
