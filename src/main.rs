@@ -14,7 +14,10 @@ async fn main() {
     let addr = config.address();
     let listener = tokio::net::TcpListener::bind(&addr).await.unwrap();
 
-    tracing::info!("🚀 Server running on http://{}", addr);
+    tracing::info!("=================================");
+    tracing::info!("  Local HTTP Server v0.1.0");
+    tracing::info!("  Running on http://{}", addr);
+    tracing::info!("=================================");
 
     axum::serve(listener, app).await.unwrap();
 }
