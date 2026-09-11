@@ -2,7 +2,6 @@ use axum::http::StatusCode;
 use axum::response::{IntoResponse, Json};
 use serde_json::json;
 
-/// A custom application error type.
 #[derive(Debug)]
 pub enum AppError {
     NotFound(String),
