@@ -2,7 +2,6 @@ use axum::{routing::get, Json, Router};
 
 use crate::models::response::{HealthResponse, StatusResponse};
 
-/// Health check handler — GET /health
 async fn health() -> Json<HealthResponse> {
     Json(HealthResponse {
         status: "ok".to_string(),
@@ -10,7 +9,6 @@ async fn health() -> Json<HealthResponse> {
     })
 }
 
-/// Status handler — GET /status
 async fn status() -> Json<StatusResponse> {
     Json(StatusResponse {
         server: "local-http-server".to_string(),
@@ -19,7 +17,6 @@ async fn status() -> Json<StatusResponse> {
     })
 }
 
-/// Returns the health-related routes.
 pub fn routes() -> Router {
     Router::new()
         .route("/health", get(health))
