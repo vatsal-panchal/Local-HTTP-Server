@@ -12,3 +12,7 @@ async fn echo(Json(payload): Json<EchoRequest>) -> Json<EchoResponse> {
 pub fn routes() -> Router {
     Router::new().route("/echo", post(echo))
 }
+
+// pub fn routes() -> Router {
+//     Router::new().route("/echo", post(echo))
+// }
